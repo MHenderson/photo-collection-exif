@@ -16,5 +16,9 @@ with open(image_path, 'rb') as image_file:
     my_image = Image(image_file)
 
 print(my_image.has_exif)
-print(my_image.make)
-print(my_image.model)
+
+print(photos_collection[0]['contents'][0]['contents'][0])
+
+photo_json = photos_collection[0]['contents'][0]['contents'][0]
+photo_json.update(make = my_image.make, model = my_image.model)
+print(photo_json)
